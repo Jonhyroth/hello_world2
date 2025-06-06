@@ -1,0 +1,56 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Articulo arte',
+    typeNamePlural: 'Articulos arte',
+    typeImageUrl: 'url',
+    imageUrl: '',
+    title: {
+        type: #STANDARD,
+        label: '',
+        iconUrl: '',
+        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: '',
+        valueQualifier: '',
+        targetElement: '',
+        url: ''
+    },
+    description: {
+        type: #STANDARD,
+        label: '',
+        iconUrl: '',
+        criticality: '',
+        criticalityRepresentation: #WITHOUT_ICON,
+        value: '',
+        valueQualifier: '',
+        targetElement: '',
+        url: ''
+    }
+}
+annotate entity Zcds_Toru_Art 
+    with 
+{
+   @UI.facet: [{ id:'DetArt', label:'Detalle articulo', type: #COLLECTION , position:10 },
+   { id:'Art', parentId : 'DetArt', label : 'Detalles' , type: #FIELDGROUP_REFERENCE , 
+   targetQualifier: 'DeArt' , position:  10 }
+   ]
+   
+  // @UI.hidden: true
+  // client;
+   
+   @UI.lineItem: [ { position : 10,importance: #HIGH } ]
+   IdArt;
+   @UI.lineItem: [ { position : 20,importance: #HIGH } ]
+   descr;
+   @UI.lineItem: [ { position : 30,importance: #HIGH } ]
+   Stock;
+   @UI.lineItem: [ { position : 40,importance: #HIGH, criticality: 'status' } ]
+   status;
+    
+    @UI.fieldGroup: [{qualifier: 'DeArt',position: 10  }]
+    Desc2;
+    @UI.fieldGroup: [{qualifier: 'DeArt',position: 20  }]
+    Color;
+    @UI.fieldGroup: [{qualifier: 'DeArt',position: 30  }]
+    Piezas;
+}

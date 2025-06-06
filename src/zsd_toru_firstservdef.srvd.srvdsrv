@@ -1,0 +1,4 @@
+@EndUserText.label: 'Primer service definition'
+define service ZSD_TORU_FIRSTSERVDEF {
+  expose Zcds_Toru_Art;
+}
